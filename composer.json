@@ -1,0 +1,25 @@
+{
+    "name": "ed-smartass/yii2-relation-behavior",
+    "description": "Behavior for gettting and saving ActiveRecord relations",
+    "keywords": [
+        "yii2",
+        "yii2 behavior",
+        "relation behavior"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Smartass\\Yii2RelationBehavior\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ed-smartass",
+            "email": "62896221+ed-smartass@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.14"
+    }
+}
