@@ -121,7 +121,7 @@ public function rules()
 {
     return [
         // ...
-        ['categories', 'safe],
+        ['categories', 'safe'],
         // ...
     ];
 }
