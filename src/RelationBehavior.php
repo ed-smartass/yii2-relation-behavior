@@ -430,6 +430,7 @@ class RelationBehavior extends Behavior
                 $index = false;
 
                 foreach($value as $i => $newModel) {
+                    $newModel->validate();
                     if ($newModel->equals($oldModel)) {
                         $index = $i;
                         break;
