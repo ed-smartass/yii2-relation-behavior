@@ -30,6 +30,11 @@ class RelationBehavior extends Behavior
     public $relations = [];
 
     /**
+     * @var array
+     */
+    public $transaction = true;
+
+    /**
      * @var BaseActiveRecord[]
      */
     protected $_values = [];
@@ -267,6 +272,10 @@ class RelationBehavior extends Behavior
      */
     public function beginTransaction()
     {
+        if (!$this->transaction) {
+            return;
+        }
+
         if ($this->_transaction) {
             $this->rollBackTransaction();
         }
@@ -279,6 +288,10 @@ class RelationBehavior extends Behavior
      */
     public function commitTransaction()
     {
+        if (!$this->transaction) {
+            return;
+        }
+
         if ($this->_transaction) {
             $this->_transaction->commit();
             $this->_transaction = null;
@@ -290,6 +303,10 @@ class RelationBehavior extends Behavior
      */
     public function rollBackTransaction()
     {
+        if (!$this->transaction) {
+            return;
+        }
+        
         if ($this->_transaction) {
             $this->_transaction->rollBack();
             $this->_transaction = null;
